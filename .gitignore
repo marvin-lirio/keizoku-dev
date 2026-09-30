@@ -11,7 +11,7 @@ For the current project, we don't need a 200-line boilerplate `.gitignore`.
 
 ```gitignore
 # =========================================================
-# KEIZOKU DEVOPS
+# KEIZOKU DEV
 # Git Ignore
 # =========================================================
 

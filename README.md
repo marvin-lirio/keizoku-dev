@@ -1,8 +1,8 @@
-# Keizoku DevOps
+# Keizoku Dev
 
-The official website and ongoing development project for **Keizoku DevOps**, an independent development studio focused on software, web development, automation and digital products.
+The official website and ongoing development project for **Keizoku Dev**, an independent development studio focused on software, web development, automation and digital products.
 
-The site is built and maintained as both the public home of Keizoku DevOps and a practical environment for developing, testing and refining modern front-end development skills.
+The site is built and maintained as both the public home of Keizoku Dev and a practical environment for developing, testing and refining modern front-end development skills.
 
 ---
 
@@ -14,7 +14,7 @@ That idea shapes both the identity of the studio and the way the project is deve
 
 **Build → Test → Improve → Continue**
 
-Keizoku DevOps combines development with a quality-first mindset shaped by experience across software testing, QA, enterprise systems, technical compliance and product delivery.
+Keizoku Dev combines development with a quality-first mindset shaped by experience across software testing, QA, enterprise systems, technical compliance and product delivery.
 
 The goal is not simply to produce working code, but to understand what is being built, validate how it behaves and continuously improve the result.
 
@@ -26,7 +26,7 @@ The website currently includes four primary pages:
 
 ### Home
 
-Introduces Keizoku DevOps, its areas of focus and selected active projects.
+Introduces Keizoku Dev, its areas of focus and selected active projects.
 
 The Home page also includes a continuously moving project reel highlighting current work and concepts.
 
@@ -38,7 +38,7 @@ The interface is currently implemented as a front-end experience only. Form subm
 
 ### About
 
-Explains the development philosophy behind Keizoku DevOps, including:
+Explains the development philosophy behind Keizoku Dev, including:
 
 - Build
 - Test
@@ -83,11 +83,11 @@ Areas of work include:
 
 ---
 
-### Keizoku DevOps Website
+### Keizoku Dev Website
 
 **Status:** Active / Continuous Development
 
-The design and development of Keizoku DevOps' own web presence.
+The design and development of Keizoku Dev' own web presence.
 
 The website is developed incrementally, with each page and interaction implemented, tested and refined as part of the broader site system.
 
@@ -163,7 +163,7 @@ The current site is intentionally built with a lightweight front-end stack.
 ## Project Structure
 
 ```text
-keizoku-devops/
+keizoku-dev/
 │
 ├── assets/
 │   ├── icons/
@@ -171,7 +171,7 @@ keizoku-devops/
 │   └── projects/
 │
 ├── css/
-│   ├── dev.css
+│   ├── about.css
 │   ├── global.css
 │   ├── home.css
 │   ├── inquiry.css
@@ -186,7 +186,7 @@ keizoku-devops/
 ├── projects/
 │
 ├── .gitignore
-├── dev.html
+├── about.html
 ├── index.html
 ├── inquiry.html
 ├── projects.html

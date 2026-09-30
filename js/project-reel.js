@@ -2,7 +2,7 @@
 
 
 /* =========================================================
-   KEIZOKU DEVOPS
+   KEIZOKU DEV
    Project Highlight Reel
    ========================================================= */
 
@@ -21,7 +21,7 @@ const projects = [
     },
 
     {
-        name: "Keizoku DevOps Website",
+        name: "Keizoku Dev Website",
         category: "Web Development",
         status: "Continuous Development",
         url: "projects.html"
