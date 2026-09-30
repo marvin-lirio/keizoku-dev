@@ -32,8 +32,6 @@
 }
 
 
-/* ---------- UPPER CIRCLE ---------- */
-
 .about-circle-one {
     width: 520px;
     height: 520px;
@@ -46,8 +44,6 @@
         rgba(120, 101, 77, 0.08);
 }
 
-
-/* ---------- LOWER CIRCLE ---------- */
 
 .about-circle-two {
     width: 340px;
@@ -346,17 +342,6 @@
 }
 
 
-.process-card:hover {
-    opacity: 1;
-
-    background:
-        rgba(250, 248, 242, 0.9);
-
-    border-color:
-        var(--border-strong);
-}
-
-
 .process-card-meta {
     display: flex;
 
@@ -415,29 +400,6 @@
     font-size: 0.9rem;
 
     line-height: 1.7;
-}
-
-
-/* =========================================================
-   PROCESS — ACTIVE
-   ========================================================= */
-
-.process-step.is-active .process-card {
-    opacity: 1;
-
-    background:
-        rgba(250, 248, 242, 0.96);
-
-    border-color:
-        rgba(153, 115, 81, 0.44);
-
-    transform:
-        translateY(-2px);
-}
-
-
-.process-step.is-active .process-number {
-    color: var(--accent);
 }
 
 
@@ -517,13 +479,36 @@
 }
 
 
-.process-step.is-active .process-connector {
+/* =========================================================
+   PROCESS — HOVER
+   ========================================================= */
+
+.process-step:hover .process-card {
+    opacity: 1;
+
+    background:
+        rgba(250, 248, 242, 0.96);
+
+    border-color:
+        rgba(153, 115, 81, 0.44);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.process-step:hover .process-number {
+    color: var(--accent);
+}
+
+
+.process-step:hover .process-connector {
     background:
         rgba(153, 115, 81, 0.68);
 }
 
 
-.process-step.is-active .process-node {
+.process-step:hover .process-node {
     opacity: 1;
 
     background: var(--accent);
@@ -1204,44 +1189,6 @@
         margin-top: 18px;
     }
 
-    /* ---------- STACK SWIPE ---------- */
-
-    .stack-reel {
-        overflow-x: auto;
-        overflow-y: hidden;
-
-        scroll-snap-type: x mandatory;
-
-        -webkit-overflow-scrolling: touch;
-
-        scrollbar-width: none;
-
-        touch-action: pan-x;
-    }
-
-
-    .stack-reel::-webkit-scrollbar {
-        display: none;
-    }
-
-
-    .stack-track {
-        transform: none !important;
-
-        width: max-content;
-    }
-
-
-    .stack-card {
-        flex:
-            0
-            0
-            calc(100vw - (var(--page-gutter) * 2));
-
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-    }
-
 }
 
 
@@ -1262,6 +1209,7 @@
 
     .process-node,
     .process-card,
+    .process-connector,
     .stack-track {
         transition: none;
     }

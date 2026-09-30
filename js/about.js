@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       PROCESS REVEAL + ACTIVE HIGHLIGHT
+       PROCESS REVEAL
        ===================================================== */
 
     const processSteps =
@@ -29,23 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         firstStep.classList.add(
-            "is-visible",
-            "is-active"
+            "is-visible"
         );
-
-
-        const setActiveStep = (activeStep) => {
-
-            processSteps.forEach((step) => {
-
-                step.classList.toggle(
-                    "is-active",
-                    step === activeStep
-                );
-
-            });
-
-        };
 
 
         const processObserver =
@@ -61,11 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         entry.target.classList.add(
                             "is-visible"
-                        );
-
-
-                        setActiveStep(
-                            entry.target
                         );
 
                     });
@@ -138,16 +118,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       VIEWPORT MODE
+       VISIBLE CARD COUNT
        ===================================================== */
-
-    const isMobile = () =>
-        window.innerWidth <= 700;
-
 
     const getVisibleCount = () => {
 
-        if (isMobile()) {
+        if (window.innerWidth <= 700) {
             return 1;
         }
 
@@ -167,24 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
        ===================================================== */
 
     const sizeCards = () => {
-
-        /*
-            Mobile card sizing is handled by CSS so the
-            reel can use native horizontal scrolling.
-        */
-
-        if (isMobile()) {
-
-            cards.forEach((card) => {
-
-                card.style.flexBasis = "";
-
-            });
-
-
-            return;
-        }
-
 
         const visible =
             getVisibleCount();
@@ -220,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       CARD STEP
+       REEL STEP
        ===================================================== */
 
     const getStep = () => {
@@ -253,67 +211,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       CURRENT MOBILE CARD
-       ===================================================== */
-
-    const getMobileIndex = () => {
-
-        const step =
-            getStep();
-
-
-        if (!step) {
-            return 0;
-        }
-
-
-        return Math.round(
-            stackReel.scrollLeft /
-            step
-        );
-
-    };
-
-
-    /* =====================================================
-       UPDATE STACK
+       UPDATE REEL
        ===================================================== */
 
     const updateStack = () => {
-
-        if (!cards.length) {
-            return;
-        }
-
-
-        if (isMobile()) {
-
-            const maxIndex =
-                cards.length - 1;
-
-
-            if (currentIndex > maxIndex) {
-                currentIndex = 0;
-            }
-
-
-            if (currentIndex < 0) {
-                currentIndex = maxIndex;
-            }
-
-
-            stackReel.scrollTo({
-                left:
-                    currentIndex *
-                    getStep(),
-
-                behavior: "smooth"
-            });
-
-
-            return;
-        }
-
 
         const visible =
             getVisibleCount();
@@ -343,30 +244,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       REFRESH STACK
+       REFRESH REEL
        ===================================================== */
 
     const refreshStack = () => {
 
-        currentIndex = 0;
-
-
         sizeCards();
 
-
-        if (isMobile()) {
-
-            stackTrack.style.transform = "";
-
-            stackReel.scrollLeft = 0;
-
-        } else {
-
-            stackReel.scrollLeft = 0;
-
-            updateStack();
-
-        }
+        updateStack();
 
     };
 
@@ -378,14 +263,6 @@ document.addEventListener("DOMContentLoaded", () => {
     stackNext.addEventListener(
         "click",
         () => {
-
-            if (isMobile()) {
-
-                currentIndex =
-                    getMobileIndex();
-
-            }
-
 
             currentIndex += 1;
 
@@ -399,41 +276,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "click",
         () => {
 
-            if (isMobile()) {
-
-                currentIndex =
-                    getMobileIndex();
-
-            }
-
-
             currentIndex -= 1;
 
             updateStack();
 
-        }
-    );
-
-
-    /* =====================================================
-       MOBILE SWIPE POSITION
-       ===================================================== */
-
-    stackReel.addEventListener(
-        "scroll",
-        () => {
-
-            if (!isMobile()) {
-                return;
-            }
-
-
-            currentIndex =
-                getMobileIndex();
-
-        },
-        {
-            passive: true
         }
     );
 
