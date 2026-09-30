@@ -1,0 +1,773 @@
+/* =========================================================
+   KEIZOKU DEVOPS
+   GLOBAL
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+
+    /*
+        Always reserve space for the vertical scrollbar.
+
+        This prevents centered site content from shifting
+        horizontally between short pages and pages that
+        require vertical scrolling.
+    */
+
+    scrollbar-gutter: stable;
+}
+
+body {
+    margin: 0;
+
+    background: #f3efe6;
+    color: #252521;
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    color: inherit;
+}
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+    --background: #f3efe6;
+
+    --surface: #faf8f2;
+    --surface-warm: #e9dfcf;
+
+    --text: #252521;
+    --text-soft: #625f57;
+    --text-muted: #918a7e;
+
+    --accent: #997351;
+    --accent-soft: #c9ac88;
+
+    --border: rgba(55, 50, 43, 0.16);
+    --border-strong: rgba(55, 50, 43, 0.28);
+
+    --container: 1380px;
+    --page-gutter: 40px;
+
+    --header-height: 72px;
+    --footer-height: 54px;
+
+    --transition:
+        300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   SHARED SITE CONTAINER
+   ========================================================= */
+
+.container {
+    width:
+        min(
+            var(--container),
+            calc(
+                100% -
+                (var(--page-gutter) * 2)
+            )
+        );
+
+    margin-inline: auto;
+}
+
+::selection {
+    background: var(--accent-soft);
+    color: var(--text);
+}
+
+
+/* =========================================================
+   SITE HEADER
+   ========================================================= */
+
+.site-header {
+    position: relative;
+    z-index: 100;
+
+    width: 100%;
+
+    background: var(--background);
+
+    opacity: 1;
+    transform: none;
+
+    animation: none;
+    transition: none;
+}
+
+
+/* =========================================================
+   HEADER — SHARED FRAME
+   ========================================================= */
+
+.nav-container {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: var(--header-height);
+    min-height: var(--header-height);
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+    opacity: 1;
+    transform: none;
+
+    animation: none;
+    transition: none;
+}
+
+
+/* =========================================================
+   HEADER — BRAND
+   ========================================================= */
+
+.brand {
+    position: relative;
+    z-index: 102;
+
+    display: inline-flex;
+    align-items: center;
+
+    color: var(--text);
+
+    font-size: 0.76rem;
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: -0.02em;
+
+    transition:
+        color var(--transition);
+}
+
+.brand:hover {
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   HEADER — NAVIGATION
+   ========================================================= */
+
+.nav-menu {
+    position: relative;
+    z-index: 101;
+}
+
+
+/* =========================================================
+   HEADER — CURRENT PAGE BUTTON
+   ========================================================= */
+
+.nav-menu-toggle {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 100px;
+
+    padding: 10px 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 0.76rem;
+    font-weight: 600;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition);
+}
+
+.nav-menu-toggle:hover {
+    color: var(--accent);
+}
+
+.nav-current {
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   HEADER — CHEVRON
+   ========================================================= */
+
+.nav-chevron {
+    position: relative;
+
+    width: 7px;
+    height: 7px;
+
+    margin-top: -4px;
+
+    border-right:
+        1px solid
+        currentColor;
+
+    border-bottom:
+        1px solid
+        currentColor;
+
+    transform:
+        rotate(45deg);
+
+    transition:
+        transform var(--transition),
+        margin var(--transition);
+}
+
+.nav-menu.open .nav-chevron {
+    margin-top: 4px;
+
+    transform:
+        rotate(225deg);
+}
+
+
+/* =========================================================
+   HEADER — DROPDOWN
+   ========================================================= */
+
+.nav-dropdown {
+    position: absolute;
+
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 205px;
+
+    border:
+        1px solid
+        var(--border);
+
+    background:
+        rgba(246, 242, 233, 0.98);
+
+    backdrop-filter:
+        blur(12px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translateY(-6px);
+
+    pointer-events: none;
+
+    transition:
+        opacity var(--transition),
+        transform var(--transition),
+        visibility var(--transition);
+}
+
+.nav-menu.open .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(0);
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   HEADER — DROPDOWN LINKS
+   ========================================================= */
+
+.nav-dropdown a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 46px;
+
+    padding:
+        0
+        16px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+    color: var(--text-soft);
+
+    font-size: 0.74rem;
+    font-weight: 600;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        padding var(--transition);
+}
+
+.nav-dropdown a:last-child {
+    border-bottom: 0;
+}
+
+.nav-dropdown a:hover {
+    padding-left: 20px;
+
+    background:
+        rgba(203, 181, 151, 0.10);
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   HEADER — ACTIVE PAGE
+   ========================================================= */
+
+.nav-dropdown a.active {
+    color: var(--text);
+
+    font-weight: 700;
+}
+
+.nav-indicator {
+    width: 5px;
+    height: 5px;
+
+    flex: 0 0 auto;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+}
+
+
+/* =========================================================
+   NAVIGATION BACKDROP
+   ========================================================= */
+
+.nav-backdrop {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99;
+
+    background:
+        rgba(45, 40, 33, 0.04);
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity var(--transition),
+        visibility var(--transition);
+}
+
+.nav-backdrop.visible {
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+    width: 100%;
+}
+
+
+/* =========================================================
+   SITE FOOTER
+   ========================================================= */
+
+.site-footer {
+    position: relative;
+    z-index: 100;
+
+    width: 100%;
+
+    background: var(--background);
+
+    opacity: 1;
+    transform: none;
+
+    animation: none;
+    transition: none;
+}
+
+
+/* =========================================================
+   FOOTER — SHARED FRAME
+   ========================================================= */
+
+.splash-footer {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 30px;
+
+    width: 100%;
+
+    height: var(--footer-height);
+    min-height: var(--footer-height);
+
+    margin: 0;
+    padding: 0;
+
+    border-top:
+        1px solid
+        var(--border);
+
+    opacity: 1;
+    transform: none;
+
+    animation: none;
+    transition: none;
+}
+
+
+/* =========================================================
+   FOOTER — LEFT
+   ========================================================= */
+
+.footer-philosophy {
+    justify-self: start;
+
+    color: var(--text-muted);
+
+    font-size: 0.61rem;
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FOOTER — CENTER
+   ========================================================= */
+
+.keizoku-mark {
+    justify-self: center;
+
+    color: var(--accent);
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: 0;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FOOTER — RIGHT
+   ========================================================= */
+
+.footer-details {
+    justify-self: end;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    color: var(--text-muted);
+
+    font-size: 0.61rem;
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+.footer-details a {
+    transition:
+        color var(--transition);
+}
+
+.footer-details a:hover {
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline:
+        2px solid
+        var(--accent);
+
+    outline-offset: 5px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    :root {
+        --page-gutter: 28px;
+    }
+
+
+    .footer-details {
+        gap: 14px;
+
+        font-size: 0.58rem;
+    }
+
+
+    .footer-philosophy {
+        font-size: 0.58rem;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    :root {
+        --page-gutter: 16px;
+
+        --header-height: 66px;
+        --footer-height: auto;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+    .nav-container {
+        height:
+            var(--header-height);
+
+        min-height:
+            var(--header-height);
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .splash-footer {
+        height: auto;
+        min-height: 0;
+
+        grid-template-columns:
+            1fr
+            auto;
+
+        gap:
+            14px
+            24px;
+
+        padding:
+            18px
+            0;
+    }
+
+
+    .footer-philosophy {
+        grid-column: 1;
+
+        justify-self: start;
+
+        white-space: normal;
+    }
+
+
+    .keizoku-mark {
+        grid-column: 2;
+        grid-row: 1;
+
+        justify-self: end;
+    }
+
+
+    .footer-details {
+        grid-column:
+            1 / -1;
+
+        grid-row: 2;
+
+        justify-self: start;
+
+        flex-wrap: wrap;
+
+        gap:
+            7px
+            16px;
+
+        white-space: normal;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .brand {
+        font-size: 0.74rem;
+    }
+
+
+    .nav-menu-toggle {
+        min-width: auto;
+
+        gap: 9px;
+
+        font-size: 0.72rem;
+    }
+
+
+    .splash-footer {
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
+        padding:
+            17px
+            0;
+    }
+
+
+    .keizoku-mark {
+        position: absolute;
+
+        top: 17px;
+        right: 0;
+    }
+
+
+    .footer-details {
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 4px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior:
+            auto !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+
+}

@@ -1,0 +1,83 @@
+
+A couple deliberate choices there: I **would keep the AI-assisted development section**. It matches the philosophy you've already established without making the README sound like "AI built this for me." It frames AI as part of your tooling while making ownership explicit.
+
+I also wouldn't call this merely a "training project." Unlike `hello-keizoku` and the task tracker, this has evolved into an actual studio website that simultaneously serves as a development project. The README reflects both.
+
+---
+
+## `.gitignore`
+
+For the current project, we don't need a 200-line boilerplate `.gitignore`.
+
+```gitignore
+# =========================================================
+# KEIZOKU DEVOPS
+# Git Ignore
+# =========================================================
+
+
+# ---------- Dependencies ----------
+
+node_modules/
+
+
+# ---------- Environment Files ----------
+
+.env
+.env.*
+!.env.example
+
+
+# ---------- Build / Distribution ----------
+
+dist/
+build/
+.cache/
+.parcel-cache/
+
+
+# ---------- Logs ----------
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# ---------- Operating System ----------
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+
+# ---------- Editor / IDE ----------
+
+.vscode/
+.idea/
+
+*.code-workspace
+
+
+# ---------- Temporary Files ----------
+
+*.tmp
+*.temp
+*.swp
+*.swo
+
+*~
+~$*
+
+
+# ---------- Test / Coverage Output ----------
+
+coverage/
+
+
+# ---------- Local Development ----------
+
+.local/
+temp/
+tmp/

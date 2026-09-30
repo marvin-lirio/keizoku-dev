@@ -1,0 +1,671 @@
+/* =========================================================
+   KEIZOKU DEVOPS
+   INQUIRY
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.inquiry-page {
+    position: relative;
+    width: 100%;
+}
+
+
+.inquiry {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        48px
+        0
+        42px;
+
+    overflow: hidden;
+}
+
+
+.inquiry-container {
+    position: relative;
+    z-index: 2;
+
+    /*
+        Horizontal geometry comes entirely from the global
+        .container class.
+
+        No viewport-height calculations.
+        No header/footer compensation.
+    */
+}
+
+
+/* =========================================================
+   BACKGROUND DETAILS
+   ========================================================= */
+
+.background-shape {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.background-shape-one {
+    top: 20px;
+    right: -150px;
+
+    width: 520px;
+    height: 520px;
+
+    border:
+        1px solid
+        rgba(120, 101, 77, 0.10);
+
+    animation:
+        drift-shape
+        16s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+.background-shape-two {
+    top: 110px;
+    right: 150px;
+
+    width: 250px;
+    height: 250px;
+
+    background:
+        rgba(203, 181, 151, 0.10);
+
+    animation:
+        drift-shape-secondary
+        13s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.inquiry-intro {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.page-label {
+    display: block;
+
+    margin-bottom: 28px;
+
+    color: var(--text-muted);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+
+.inquiry-intro h1 {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0;
+
+    color: var(--text);
+
+    font-size:
+        clamp(
+            3.8rem,
+            5.4vw,
+            6rem
+        );
+
+    font-weight: 500;
+
+    line-height: 0.98;
+
+    letter-spacing: -0.06em;
+
+    text-wrap: balance;
+}
+
+
+.inquiry-description {
+    max-width: 760px;
+
+    margin:
+        26px
+        0
+        0;
+
+    color: var(--text-soft);
+
+    font-size:
+        clamp(
+            1rem,
+            1.15vw,
+            1.08rem
+        );
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.inquiry-form-wrapper {
+    width: 100%;
+
+    margin-top: 30px;
+}
+
+
+.inquiry-form {
+    width: 100%;
+}
+
+
+/* =========================================================
+   FORM ROW
+   ========================================================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 14px;
+
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   FORM FIELDS
+   ========================================================= */
+
+.form-field {
+    position: relative;
+
+    padding:
+        18px
+        20px
+        0;
+
+    border:
+        1px solid
+        var(--border);
+
+    background:
+        rgba(250, 248, 242, 0.48);
+
+    transition:
+        background var(--transition),
+        border-color var(--transition);
+}
+
+
+.form-field + .form-field {
+    margin-top: 14px;
+}
+
+
+.form-row .form-field + .form-field {
+    margin-top: 0;
+}
+
+
+.form-field:hover {
+    background:
+        rgba(250, 248, 242, 0.72);
+
+    border-color:
+        var(--border-strong);
+}
+
+
+.form-field:focus-within {
+    background:
+        rgba(250, 248, 242, 0.92);
+
+    border-color:
+        rgba(153, 115, 81, 0.48);
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.form-field label {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+    color: var(--text);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.03em;
+}
+
+
+.form-field label span {
+    color: var(--text-muted);
+
+    font-size: 0.6rem;
+    font-weight: 650;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+
+    padding:
+        7px
+        0
+        18px;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font: inherit;
+
+    font-size: 0.95rem;
+
+    resize: none;
+}
+
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color:
+        rgba(98, 95, 87, 0.48);
+}
+
+
+.form-field textarea {
+    min-height: 125px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.message-field {
+    margin-top: 14px;
+}
+
+
+/* =========================================================
+   FORM BOTTOM
+   ========================================================= */
+
+.form-bottom {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto;
+
+    align-items: stretch;
+
+    margin-top: -1px;
+
+    border:
+        1px solid
+        var(--border);
+}
+
+
+.form-status {
+    display: flex;
+
+    align-items: center;
+
+    margin: 0;
+
+    padding:
+        0
+        20px;
+
+    color: var(--text-muted);
+
+    font-size: 0.68rem;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.submit-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    min-width: 205px;
+
+    padding:
+        18px
+        20px;
+
+    border: 0;
+
+    border-left:
+        1px solid
+        var(--border);
+
+    background:
+        var(--text);
+
+    color:
+        var(--background);
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+
+.submit-button:not(:disabled):hover {
+    background:
+        var(--accent);
+}
+
+
+.submit-button span {
+    transition:
+        transform var(--transition);
+}
+
+
+.submit-button:not(:disabled):hover span {
+    transform:
+        translateX(4px);
+}
+
+
+/* =========================================================
+   DISABLED SUBMIT
+   ========================================================= */
+
+.submit-button:disabled {
+    background:
+        rgba(55, 50, 43, 0.035);
+
+    color:
+        var(--text-muted);
+
+    cursor:
+        not-allowed;
+
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   BACKGROUND MOTION
+   ========================================================= */
+
+@keyframes drift-shape {
+
+    from {
+        transform:
+            translate(0, 0);
+    }
+
+    to {
+        transform:
+            translate(-20px, 15px);
+    }
+
+}
+
+
+@keyframes drift-shape-secondary {
+
+    from {
+        transform:
+            translate(0, 0);
+    }
+
+    to {
+        transform:
+            translate(18px, -14px);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .inquiry {
+        padding-top: 44px;
+    }
+
+
+    .inquiry-intro h1 {
+        max-width: 850px;
+    }
+
+
+    .inquiry-description {
+        max-width: 600px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .inquiry {
+        padding:
+            38px
+            0
+            32px;
+    }
+
+
+    .page-label {
+        margin-bottom: 22px;
+    }
+
+
+    .inquiry-intro h1 {
+        font-size:
+            clamp(
+                3rem,
+                13vw,
+                4.8rem
+            );
+
+        line-height: 1;
+    }
+
+
+    .inquiry-description {
+        margin-top: 22px;
+    }
+
+
+    /* ---------- FORM ---------- */
+
+    .inquiry-form-wrapper {
+        margin-top: 28px;
+    }
+
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .form-row .form-field + .form-field {
+        margin-top: 0;
+    }
+
+
+    .form-field {
+        padding:
+            17px
+            16px
+            0;
+    }
+
+
+    .form-bottom {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-status {
+        min-height: 48px;
+
+        padding:
+            12px
+            16px;
+    }
+
+
+    .submit-button {
+        width: 100%;
+
+        border-left: 0;
+
+        border-top:
+            1px solid
+            var(--border);
+
+        padding: 16px;
+    }
+
+
+    /* ---------- BACKGROUND ---------- */
+
+    .background-shape-one {
+        right: -300px;
+    }
+
+
+    .background-shape-two {
+        right: -40px;
+
+        width: 190px;
+        height: 190px;
+    }
+
+}
+
+
+/* =========================================================
+   SHORT DESKTOP
+   ========================================================= */
+
+@media (max-height: 800px) and (min-width: 1001px) {
+
+    .inquiry {
+        padding:
+            32px
+            0
+            34px;
+    }
+
+
+    .page-label {
+        margin-bottom: 22px;
+    }
+
+
+    .inquiry-intro h1 {
+        font-size:
+            clamp(
+                3.5rem,
+                5vw,
+                5.4rem
+            );
+    }
+
+
+    .inquiry-description {
+        margin-top: 20px;
+    }
+
+
+    .inquiry-form-wrapper {
+        margin-top: 24px;
+    }
+
+
+    .form-field {
+        padding-top: 14px;
+    }
+
+
+    .form-field textarea {
+        min-height: 90px;
+    }
+
+}

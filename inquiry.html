@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Start a conversation with Keizoku DevOps about a software, web development, automation or digital product idea."
+    >
+
+    <title>Inquiry | Keizoku DevOps</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/inquiry.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="container nav-container">
+
+            <a
+                href="index.html"
+                class="brand"
+                aria-label="Keizoku DevOps Home"
+            >
+                Keizoku DevOps
+            </a>
+
+
+            <div class="nav-menu">
+
+                <button
+                    class="nav-menu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="site-navigation"
+                >
+                    <span class="nav-current">
+                        Inquiry
+                    </span>
+
+                    <span
+                        class="nav-chevron"
+                        aria-hidden="true"
+                    ></span>
+                </button>
+
+
+                <nav
+                    class="nav-dropdown"
+                    id="site-navigation"
+                    aria-label="Main navigation"
+                >
+
+                    <a href="index.html">
+                        <span>Home</span>
+                    </a>
+
+                    <a
+                        href="inquiry.html"
+                        class="active"
+                        aria-current="page"
+                    >
+                        <span>Inquiry</span>
+                        <span
+                            class="nav-indicator"
+                            aria-hidden="true"
+                        ></span>
+                    </a>
+
+                    <a href="dev.html">
+                        <span>About</span>
+                    </a>
+
+                    <a href="projects.html">
+                        <span>Projects</span>
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="inquiry-page">
+
+        <section class="inquiry">
+
+            <!-- Decorative background -->
+
+            <div
+                class="background-shape background-shape-one"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="background-shape background-shape-two"
+                aria-hidden="true"
+            ></div>
+
+
+            <div class="container inquiry-container">
+
+                <!-- =================================================
+                     INTRO
+                     ================================================= -->
+
+                <div class="inquiry-intro">
+
+                    <span class="page-label">
+                        Inquiry / Consultation
+                    </span>
+
+                    <h1>
+                        Have something you'd like to build, improve or explore?
+                    </h1>
+
+                    <p class="inquiry-description">
+                        Tell us about the idea, problem or opportunity.
+                        It doesn't need to be fully figured out yet.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     FORM
+                     ================================================= -->
+
+                <div class="inquiry-form-wrapper">
+
+                    <form
+                        class="inquiry-form"
+                        action="#"
+                        method="post"
+                        onsubmit="return false;"
+                    >
+
+                        <!-- Name / Email -->
+
+                        <div class="form-row">
+
+                            <div class="form-field">
+
+                                <label for="name">
+                                    Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    autocomplete="name"
+                                    placeholder="Your name"
+                                >
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="email">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    autocomplete="email"
+                                    placeholder="you@example.com"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Company -->
+
+                        <div class="form-field">
+
+                            <label for="company">
+                                Company / Organization
+
+                                <span>
+                                    Optional
+                                </span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="company"
+                                name="company"
+                                autocomplete="organization"
+                                placeholder="Company or organization"
+                            >
+
+                        </div>
+
+
+                        <!-- Message -->
+
+                        <div class="form-field message-field">
+
+                            <label for="message">
+                                What do you have in mind?
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                placeholder="Tell us about what you'd like to build, improve or explore..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- Form Bottom -->
+
+                        <div class="form-bottom">
+
+                            <p class="form-status">
+                                Inquiry submissions are not yet active.
+                            </p>
+
+                            <button
+                                type="submit"
+                                class="submit-button"
+                                disabled
+                            >
+                                Send Inquiry
+
+                                <span aria-hidden="true">
+                                    →
+                                </span>
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         GLOBAL FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="splash-footer">
+
+                <div class="footer-philosophy">
+                    Build • Test • Improve • Continue
+                </div>
+
+                <div class="keizoku-mark">
+                    継続
+                </div>
+
+                <div class="footer-details">
+
+                    <span>
+                        © 2026 Keizoku DevOps
+                    </span>
+
+                    <span>
+                        Las Vegas, NV
+                    </span>
+
+                    <a
+                        href="https://github.com/marvin-lirio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
