@@ -1204,6 +1204,44 @@
         margin-top: 18px;
     }
 
+    /* ---------- STACK SWIPE ---------- */
+
+    .stack-reel {
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scroll-snap-type: x mandatory;
+
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+
+        touch-action: pan-x;
+    }
+
+
+    .stack-reel::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .stack-track {
+        transform: none !important;
+
+        width: max-content;
+    }
+
+
+    .stack-card {
+        flex:
+            0
+            0
+            calc(100vw - (var(--page-gutter) * 2));
+
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
 }
 
 

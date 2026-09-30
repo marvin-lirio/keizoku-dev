@@ -138,12 +138,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       VISIBLE CARD COUNT
+       VIEWPORT MODE
        ===================================================== */
+
+    const isMobile = () =>
+        window.innerWidth <= 700;
+
 
     const getVisibleCount = () => {
 
-        if (window.innerWidth <= 700) {
+        if (isMobile()) {
             return 1;
         }
 
@@ -163,6 +167,24 @@ document.addEventListener("DOMContentLoaded", () => {
        ===================================================== */
 
     const sizeCards = () => {
+
+        /*
+            Mobile card sizing is handled by CSS so the
+            reel can use native horizontal scrolling.
+        */
+
+        if (isMobile()) {
+
+            cards.forEach((card) => {
+
+                card.style.flexBasis = "";
+
+            });
+
+
+            return;
+        }
+
 
         const visible =
             getVisibleCount();
@@ -198,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       REEL STEP
+       CARD STEP
        ===================================================== */
 
     const getStep = () => {
@@ -231,10 +253,67 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       UPDATE REEL
+       CURRENT MOBILE CARD
+       ===================================================== */
+
+    const getMobileIndex = () => {
+
+        const step =
+            getStep();
+
+
+        if (!step) {
+            return 0;
+        }
+
+
+        return Math.round(
+            stackReel.scrollLeft /
+            step
+        );
+
+    };
+
+
+    /* =====================================================
+       UPDATE STACK
        ===================================================== */
 
     const updateStack = () => {
+
+        if (!cards.length) {
+            return;
+        }
+
+
+        if (isMobile()) {
+
+            const maxIndex =
+                cards.length - 1;
+
+
+            if (currentIndex > maxIndex) {
+                currentIndex = 0;
+            }
+
+
+            if (currentIndex < 0) {
+                currentIndex = maxIndex;
+            }
+
+
+            stackReel.scrollTo({
+                left:
+                    currentIndex *
+                    getStep(),
+
+                behavior: "smooth"
+            });
+
+
+            return;
+        }
+
 
         const visible =
             getVisibleCount();
@@ -264,14 +343,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       REFRESH REEL
+       REFRESH STACK
        ===================================================== */
 
     const refreshStack = () => {
 
+        currentIndex = 0;
+
+
         sizeCards();
 
-        updateStack();
+
+        if (isMobile()) {
+
+            stackTrack.style.transform = "";
+
+            stackReel.scrollLeft = 0;
+
+        } else {
+
+            stackReel.scrollLeft = 0;
+
+            updateStack();
+
+        }
 
     };
 
@@ -283,6 +378,14 @@ document.addEventListener("DOMContentLoaded", () => {
     stackNext.addEventListener(
         "click",
         () => {
+
+            if (isMobile()) {
+
+                currentIndex =
+                    getMobileIndex();
+
+            }
+
 
             currentIndex += 1;
 
@@ -296,10 +399,41 @@ document.addEventListener("DOMContentLoaded", () => {
         "click",
         () => {
 
+            if (isMobile()) {
+
+                currentIndex =
+                    getMobileIndex();
+
+            }
+
+
             currentIndex -= 1;
 
             updateStack();
 
+        }
+    );
+
+
+    /* =====================================================
+       MOBILE SWIPE POSITION
+       ===================================================== */
+
+    stackReel.addEventListener(
+        "scroll",
+        () => {
+
+            if (!isMobile()) {
+                return;
+            }
+
+
+            currentIndex =
+                getMobileIndex();
+
+        },
+        {
+            passive: true
         }
     );
 

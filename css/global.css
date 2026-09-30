@@ -714,35 +714,67 @@ select:focus-visible {
     }
 
 
+    /* ---------- FOOTER ---------- */
+
     .splash-footer {
-        display: flex;
-        flex-direction: column;
+        display: grid;
 
-        align-items: flex-start;
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto;
 
-        gap: 12px;
+        align-items: center;
+
+        gap:
+            14px
+            20px;
 
         padding:
-            17px
+            18px
             0;
     }
 
 
-    .keizoku-mark {
-        position: absolute;
+    .footer-philosophy {
+        grid-column: 1;
 
-        top: 17px;
-        right: 0;
+        grid-row: 1;
+
+        justify-self: start;
+
+        white-space: normal;
+    }
+
+
+    .keizoku-mark {
+        position: static;
+
+        grid-column: 2;
+
+        grid-row: 1;
+
+        justify-self: end;
     }
 
 
     .footer-details {
+        grid-column:
+            1 / -1;
+
+        grid-row: 2;
+
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
 
-        align-items: flex-start;
+        align-items: center;
 
-        gap: 4px;
+        flex-wrap: wrap;
+
+        gap:
+            6px
+            14px;
+
+        width: 100%;
     }
 
 }
