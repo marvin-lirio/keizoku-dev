@@ -1,220 +1,305 @@
 /* =========================================================
+
    KEIZOKU DEV
+
    HOME
+
    ========================================================= */
 
-
 /* =========================================================
+
    HOME
+
    ========================================================= */
 
 .home {
+
     position: relative;
 
     width: 100%;
+
 }
 
-
 /* =========================================================
+
    SPLASH
+
    ========================================================= */
 
 .home-splash {
+
     position: relative;
 
     min-height:
+
         calc(
+
             100svh
+
             - var(--header-height)
+
             - var(--footer-height)
+
         );
 
     padding:
+
         48px
+
         0
+
         18px;
 
     overflow: hidden;
+
 }
 
-
 .splash-container {
+
     position: relative;
 
     z-index: 2;
 
     min-height:
+
         calc(
+
             100svh
+
             - var(--header-height)
+
             - var(--footer-height)
+
             - 66px
+
         );
 
     display: flex;
+
     flex-direction: column;
+
 }
 
-
 /* =========================================================
+
    BACKGROUND DETAILS
+
    ========================================================= */
 
 .background-shape {
+
     position: absolute;
 
     border-radius: 50%;
 
     pointer-events: none;
+
 }
 
-
 .background-shape-one {
+
     top: 15px;
+
     left: -120px;
 
     width: 520px;
+
     height: 520px;
 
     border:
+
         1px solid
+
         rgba(120, 101, 77, 0.10);
 
     animation:
+
         drift-shape
+
         16s
+
         ease-in-out
+
         infinite
+
         alternate;
+
 }
 
-
 .background-shape-two {
+
     top: 100px;
+
     left: 250px;
 
     width: 270px;
+
     height: 270px;
 
     background:
+
         rgba(203, 181, 151, 0.13);
 
     filter:
+
         blur(2px);
 
     animation:
+
         drift-shape-secondary
+
         13s
+
         ease-in-out
+
         infinite
+
         alternate;
+
 }
 
-
 /* =========================================================
+
    BUSINESS INTRO
+
    ========================================================= */
 
 .business-intro {
+
     display: grid;
 
     grid-template-columns:
+
         minmax(0, 3fr)
+
         minmax(0, 2fr);
 
     align-items: stretch;
 
     gap: 10px;
+
 }
 
-
 /* =========================================================
+
    BUSINESS PROFILE
+
    ========================================================= */
 
 .business-profile {
+
     width: 100%;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: flex-start;
 
     padding-right: 10px;
+
 }
 
-
 /* =========================================================
+
    BUSINESS BRAND
+
    ========================================================= */
 
 .business-brand {
+
     width: 100%;
+
     max-width: 680px;
 
     display: flex;
 
     align-items: flex-start;
+
     justify-content: center;
+
 }
 
-
 .business-brand-lockup {
+
     display: block;
 
     width:
+
         min(
+
             100%,
+
             480px
+
         );
 
     height: auto;
+
 }
 
-
 /* =========================================================
+
    BUSINESS DETAILS
+
    ========================================================= */
 
 .business-details {
+
     width: 100%;
+
     max-width: 680px;
 
     margin-top: 30px;
+
 }
 
-
 .business-description {
+
     width: 100%;
 
     margin:
+
         0
+
         0
+
         25px;
 
     color: var(--text-soft);
 
     font-size:
+
         clamp(
+
             0.98rem,
+
             1.2vw,
+
             1.08rem
+
         );
 
     line-height: 1.75;
+
 }
 
-
 /* =========================================================
+
    BUSINESS FOCUS
+
    ========================================================= */
 
 .business-focus {
+
     display: flex;
+
     flex-wrap: wrap;
 
     gap:
+
         8px
+
         18px;
 
     margin-bottom: 30px;
@@ -222,143 +307,187 @@
     color: var(--text-muted);
 
     font-size: 0.73rem;
+
     font-weight: 650;
 
     letter-spacing: 0.04em;
+
 }
 
-
 .business-focus span:not(:last-child)::after {
+
     content: "•";
 
     margin-left: 18px;
 
     color: var(--accent-soft);
+
 }
 
-
 /* =========================================================
+
    PRIMARY LINKS
+
    ========================================================= */
 
 .primary-links {
+
     width: 100%;
 
     border-top:
+
         1px solid
+
         var(--border);
+
 }
 
-
 .primary-links a {
+
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     padding:
+
         13px
+
         0;
 
     border-bottom:
+
         1px solid
+
         var(--border);
 
     font-size: 0.88rem;
+
     font-weight: 650;
 
     transition:
+
         color var(--transition),
+
         padding var(--transition);
+
 }
 
-
 .primary-links a:hover {
+
     padding-left: 7px;
 
     color: var(--accent);
+
 }
 
-
 /* =========================================================
+
    HOME PITCH — CALLING CARD
+
    ========================================================= */
 
 .home-pitch {
+
     position: relative;
 
     width: 100%;
+
     min-width: 0;
+
     min-height: 100%;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: flex-start;
+
     justify-content: flex-start;
 
     padding:
+
         48px
+
         46px
+
         42px;
 
     border:
+
         1px solid
+
         var(--border-strong);
 
     background:
+
         rgba(250, 248, 242, 0.76);
 
     text-align: left;
 
     overflow: hidden;
+
 }
 
-
 .home-pitch::after {
+
     content: "";
 
     position: absolute;
 
     right: -105px;
+
     bottom: -145px;
 
     width: 300px;
+
     height: 300px;
 
     border:
+
         1px solid
+
         rgba(153, 115, 81, 0.12);
 
     border-radius: 50%;
 
     pointer-events: none;
+
 }
 
-
 /* =========================================================
+
    HOME PITCH ACCENT
+
    ========================================================= */
 
 .home-pitch-accent {
+
     position: relative;
+
     align-self: center;
+
     z-index: 2;
 
     width: 58px;
+
     height: 4px;
 
     margin-bottom: 34px;
 
     background: #9f2f2f;
+
 }
 
-
 /* =========================================================
+
    HOME PITCH TITLE
+
    ========================================================= */
 
 .home-pitch-title {
+
     position: relative;
 
     z-index: 2;
@@ -366,17 +495,25 @@
     max-width: 520px;
 
     margin:
+
         0
+
         0
+
         24px;
 
     color: var(--text);
 
     font-size:
+
         clamp(
+
             2.35rem,
+
             3.15vw,
+
             3.5rem
+
         );
 
     font-weight: 600;
@@ -386,14 +523,17 @@
     letter-spacing: -0.055em;
 
     text-wrap: balance;
+
 }
 
-
 /* =========================================================
+
    HOME PITCH DESCRIPTION
+
    ========================================================= */
 
 .home-pitch-description {
+
     position: relative;
 
     z-index: 2;
@@ -405,55 +545,77 @@
     color: var(--text-soft);
 
     font-size:
+
         clamp(
+
             1rem,
+
             1.15vw,
+
             1.08rem
+
         );
 
     line-height: 1.7;
+
 }
 
-
 /* =========================================================
+
    HOME PITCH CTA
+
    ========================================================= */
 
 .home-pitch-cta {
+
     position: relative;
 
     z-index: 2;
 
     width:
+
         min(
+
             100%,
+
             360px
+
         );
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 14px;
 
     margin:
+
         42px
+
         auto
+
         0;
 
     padding:
+
         18px
+
         22px;
 
     border:
+
         1px solid
+
         #9f2f2f;
 
     background: #9f2f2f;
+
     color: var(--background);
 
     font-size: 0.84rem;
+
     font-weight: 700;
 
     letter-spacing: 0.055em;
@@ -461,35 +623,45 @@
     text-transform: uppercase;
 
     transition:
+
         background var(--transition),
+
         color var(--transition),
+
         transform var(--transition);
+
 }
 
-
 .home-pitch-cta:hover {
+
     background: transparent;
+
     color: #9f2f2f;
 
     transform: translateY(-2px);
+
 }
 
-
 /* =========================================================
+
    PROJECTS PREVIEW
+
    ========================================================= */
 
 .projects-preview {
+
     margin-top: auto;
 
     padding-top: 42px;
+
 }
 
-
 .projects-header {
+
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     margin-bottom: 14px;
@@ -497,15 +669,17 @@
     color: var(--text-soft);
 
     font-size: 0.72rem;
+
     font-weight: 700;
 
     letter-spacing: 0.08em;
 
     text-transform: uppercase;
+
 }
 
-
 .projects-header a {
+
     display: inline-flex;
 
     align-items: center;
@@ -515,27 +689,33 @@
     color: var(--text-muted);
 
     transition:
-        color var(--transition);
-}
 
+        color var(--transition);
+
+}
 
 .projects-header a:hover {
+
     color: var(--text);
+
 }
 
-
 /* =========================================================
+
    PROJECT REEL
+
    ========================================================= */
 
 .project-reel-viewport {
+
     width: 100%;
 
     overflow: hidden;
+
 }
 
-
 .project-reel {
+
     display: flex;
 
     gap: 14px;
@@ -543,22 +723,27 @@
     width: max-content;
 
     will-change: transform;
+
 }
 
-
 /* =========================================================
+
    PROJECT CARD
+
    ========================================================= */
 
 .project-card {
+
     position: relative;
 
     width: 360px;
+
     height: 190px;
 
     flex: 0 0 auto;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: space-between;
@@ -566,10 +751,13 @@
     padding: 22px;
 
     border:
+
         1px solid
+
         var(--border);
 
     background:
+
         rgba(250, 248, 242, 0.62);
 
     cursor: pointer;
@@ -577,87 +765,113 @@
     overflow: hidden;
 
     transition:
+
         background var(--transition),
+
         border-color var(--transition),
+
         transform var(--transition);
+
 }
 
-
 .project-card::after {
+
     content: "";
 
     position: absolute;
 
     right: -50px;
+
     bottom: -85px;
 
     width: 180px;
+
     height: 180px;
 
     border:
+
         1px solid
+
         rgba(153, 115, 81, 0.11);
 
     border-radius: 50%;
 
     transition:
+
         transform
+
         700ms
+
         cubic-bezier(0.22, 1, 0.36, 1);
+
 }
 
-
 .project-card:hover {
+
     border-color: var(--border-strong);
 
     background: var(--surface);
 
     transform: translateY(-2px);
-}
 
+}
 
 .project-card:hover::after {
+
     transform:
+
         translate(-15px, -15px)
+
         scale(1.08);
+
 }
 
-
 /* =========================================================
+
    PROJECT CARD CONTENT
+
    ========================================================= */
 
 .project-bottom {
+
     position: relative;
 
     z-index: 2;
+
 }
 
-
 .project-card h2 {
+
     margin:
+
         0
+
         0
+
         8px;
 
     font-size: 1.55rem;
+
     font-weight: 550;
 
     letter-spacing: -0.04em;
+
 }
 
-
 .project-brand-mark {
+
     display: block;
 
     width: auto;
+
     height: 54px;
 
     object-fit: contain;
+
 }
 
-
 .project-meta {
+
     display: flex;
 
     align-items: center;
@@ -667,13 +881,15 @@
     color: var(--text-muted);
 
     font-size: 0.68rem;
+
 }
 
-
 .project-arrow {
+
     position: absolute;
 
     right: 20px;
+
     bottom: 18px;
 
     z-index: 3;
@@ -683,23 +899,29 @@
     opacity: 0;
 
     transform:
+
         translate(-4px, 4px);
 
     transition:
+
         opacity var(--transition),
+
         transform var(--transition);
+
 }
 
-
 .project-card:hover .project-arrow {
+
     opacity: 1;
 
     transform:
+
         translate(0, 0);
+
 }
 
-
 .project-brand-title {
+
     display: flex;
 
     align-items: center;
@@ -707,402 +929,539 @@
     gap: 14px;
 
     margin-bottom: 10px;
+
 }
 
-
 .project-brand-title .project-brand-mark {
+
     width: auto;
+
     height: 48px;
 
     flex: 0 0 auto;
+
 }
 
-
 .project-brand-title h2 {
+
     margin: 0;
 
     font-size: 1.15rem;
 
     letter-spacing: -0.03em;
+
 }
 
-
 /* =========================================================
+
    BACKGROUND MOTION
+
    ========================================================= */
 
 @keyframes drift-shape {
 
     from {
+
         transform:
+
             translate(0, 0);
+
     }
 
     to {
+
         transform:
+
             translate(-25px, 18px);
+
     }
 
 }
-
 
 @keyframes drift-shape-secondary {
 
     from {
+
         transform:
+
             translate(0, 0);
+
     }
 
     to {
+
         transform:
+
             translate(18px, -14px);
+
     }
 
 }
 
-
 /* =========================================================
+
    RESPONSIVE — TABLET
+
    ========================================================= */
 
 @media (max-width: 1050px) {
 
     .home-splash {
+
         padding-top: 42px;
+
     }
 
-
     .business-intro {
+
         grid-template-columns: 1fr;
 
         gap: 42px;
-    }
 
+    }
 
     .business-profile {
-        padding-right: 0;
-    }
 
+        padding-right: 0;
+
+    }
 
     .business-brand,
+
     .business-details {
+
         max-width: 680px;
+
     }
 
-
     .home-pitch {
+
         min-height: 0;
 
         padding:
-            42px
-            40px
-            38px;
-    }
 
+            42px
+
+            40px
+
+            38px;
+
+    }
 
     .home-pitch-title {
-        max-width: 620px;
-    }
 
+        max-width: 620px;
+
+    }
 
     .home-pitch-description {
+
         max-width: 620px;
+
     }
 
-
     .home-pitch-cta {
+
         width:
+
             min(
+
                 100%,
+
                 300px
+
             );
 
         margin:
+
             38px
+
             auto
+
             0;
+
     }
 
-
     .projects-preview {
+
         margin-top: 50px;
 
         padding-top: 0;
+
     }
 
 }
 
-
 /* =========================================================
+
    RESPONSIVE — MOBILE
+
    ========================================================= */
 
 @media (max-width: 700px) {
 
     .home-splash {
+
         min-height: auto;
 
         padding:
-            38px
-            0
-            28px;
-    }
 
+            38px
+
+            0
+
+            28px;
+
+    }
 
     .splash-container {
-        min-height: auto;
-    }
 
+        min-height: auto;
+
+    }
 
     /* ---------- BUSINESS PROFILE ---------- */
 
     .business-profile {
+
         width: 100%;
+
         max-width: none;
 
         padding-right: 0;
+
     }
 
-
     .business-brand {
+
         width: 100%;
+
         max-width: none;
 
         justify-content: center;
+
     }
 
-
     .business-brand-lockup {
+
         width:
+
             min(
+
                 100%,
+
                 420px
+
             );
 
         max-width: 100%;
 
         height: auto;
+
     }
 
-
     .business-details {
+
         width: 100%;
+
         max-width: none;
 
         margin-top: 28px;
-    }
 
+    }
 
     .business-intro {
+
         gap: 38px;
+
     }
 
-
     .business-focus {
+
         display: grid;
 
         grid-template-columns:
+
             repeat(
+
                 2,
+
                 minmax(0, 1fr)
+
             );
 
         gap:
-            8px
-            20px;
-    }
 
+            8px
+
+            20px;
+
+    }
 
     .business-focus span::after {
-        display: none;
-    }
 
+        display: none;
+
+    }
 
     /* ---------- HOME PITCH ---------- */
 
     .home-pitch {
+
     width: 100%;
+
     min-height: 0;
 
     padding:
+
         34px
+
         26px
+
         30px;
 
     border:
+
         1px solid
+
         var(--border-strong);
 
     background:
+
         rgba(250, 248, 242, 0.88);
+
 }
 
 .home-pitch-accent {
+
     align-self: center;
 
     width: 48px;
+
     height: 4px;
 
     margin-bottom: 28px;
 
     background: #9f2f2f;
+
 }
 
 .home-pitch-title {
+
     max-width: none;
 
     font-size:
+
         clamp(
+
             2rem,
+
             8vw,
+
             2.5rem
+
         );
+
 }
 
 .home-pitch-description {
+
     max-width: none;
 
     font-size: 0.94rem;
+
     line-height: 1.65;
+
 }
 
 .home-pitch-cta {
+
     width: 100%;
 
     margin:
+
         30px
+
         0
+
         0;
 
     padding:
+
         17px
+
         18px;
 
     border:
+
         1px solid
+
         #9f2f2f;
 
     background: #9f2f2f;
+
     color: var(--background);
 
     font-size: 0.82rem;
+
     font-weight: 700;
 
     letter-spacing: 0.055em;
 
     text-transform: uppercase;
+
 }
 
     /* ---------- PROJECTS ---------- */
 
     .projects-preview {
+
         margin-top: 48px;
 
         padding-top: 0;
+
     }
 
-
     .project-card {
+
         width:
+
             min(
+
                 82vw,
+
                 330px
+
             );
 
         height: 180px;
+
     }
 
 }
 
-
 /* =========================================================
+
    SHORT DESKTOP
+
    ========================================================= */
 
 @media (max-height: 800px) and (min-width: 1051px) {
 
     .home-splash {
-        padding-top: 34px;
-    }
 
+        padding-top: 34px;
+
+    }
 
     .splash-container {
-        min-height:
-            calc(
-                100svh
-                - var(--header-height)
-                - var(--footer-height)
-                - 52px
-            );
-    }
 
+        min-height:
+
+            calc(
+
+                100svh
+
+                - var(--header-height)
+
+                - var(--footer-height)
+
+                - 52px
+
+            );
+
+    }
 
     .business-brand-lockup {
-        width:
-            min(
-                100%,
-                420px
-            );
-    }
 
+        width:
+
+            min(
+
+                100%,
+
+                420px
+
+            );
+
+    }
 
     .business-details {
+
         margin-top: 22px;
+
     }
 
-
     .business-description {
+
         margin-bottom: 18px;
 
         line-height: 1.6;
-    }
 
+    }
 
     .business-focus {
-        margin-bottom: 20px;
-    }
 
+        margin-bottom: 20px;
+
+    }
 
     .home-pitch {
-        padding:
-            36px
-            38px
-            32px;
-    }
 
+        padding:
+
+            36px
+
+            38px
+
+            32px;
+
+    }
 
     .home-pitch-accent {
-        margin-bottom: 24px;
-    }
 
+        margin-bottom: 24px;
+
+    }
 
     .home-pitch-title {
-        font-size:
-            clamp(
-                1.9rem,
-                2.3vw,
-                2.55rem
-            );
-    }
 
+        font-size:
+
+            clamp(
+
+                1.9rem,
+
+                2.3vw,
+
+                2.55rem
+
+            );
+
+    }
 
     .home-pitch-description {
-        line-height: 1.6;
-    }
 
+        line-height: 1.6;
+
+    }
 
     .home-pitch-cta {
-        margin-top: 28px;
-    }
 
+        margin-top: 28px;
+
+    }
 
     .projects-preview {
+
         padding-top: 30px;
+
     }
 
-
     .project-card {
+
         height: 165px;
+
     }
 
 }
