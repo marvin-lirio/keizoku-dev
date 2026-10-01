@@ -921,67 +921,77 @@
     /* ---------- HOME PITCH ---------- */
 
     .home-pitch {
-        width: 100%;
+    width: 100%;
+    min-height: 0;
 
-        min-height: 0;
+    padding:
+        34px
+        26px
+        30px;
 
-        padding:
-            32px
-            24px
-            28px;
-    }
+    border:
+        1px solid
+        var(--border-strong);
 
+    background:
+        rgba(250, 248, 242, 0.88);
+}
 
-    .home-pitch::after {
-        right: -120px;
-        bottom: -150px;
+.home-pitch-accent {
+    align-self: center;
 
-        width: 260px;
-        height: 260px;
-    }
+    width: 48px;
+    height: 4px;
 
+    margin-bottom: 28px;
 
-    .home-pitch-accent {
-        width: 48px;
+    background: #9f2f2f;
+}
 
-        margin-bottom: 26px;
-    }
+.home-pitch-title {
+    max-width: none;
 
+    font-size:
+        clamp(
+            2rem,
+            8vw,
+            2.5rem
+        );
+}
 
-    .home-pitch-title {
-        max-width: none;
+.home-pitch-description {
+    max-width: none;
 
-        font-size:
-            clamp(
-                1.8rem,
-                8vw,
-                2.35rem
-            );
-    }
+    font-size: 0.94rem;
+    line-height: 1.65;
+}
 
+.home-pitch-cta {
+    width: 100%;
 
-    .home-pitch-description {
-        max-width: none;
+    margin:
+        30px
+        0
+        0;
 
-        font-size: 0.94rem;
-    }
+    padding:
+        17px
+        18px;
 
+    border:
+        1px solid
+        #9f2f2f;
 
-    .home-pitch-cta {
-        width: 100%;
+    background: #9f2f2f;
+    color: var(--background);
 
-        min-width: 0;
+    font-size: 0.82rem;
+    font-weight: 700;
 
-        margin:
-            30px
-            0
-            0;
+    letter-spacing: 0.055em;
 
-        padding:
-            16px
-            18px;
-    }
-
+    text-transform: uppercase;
+}
 
     /* ---------- PROJECTS ---------- */
 
