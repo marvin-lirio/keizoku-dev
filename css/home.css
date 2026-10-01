@@ -589,6 +589,20 @@
         min-height: auto;
     }
 
+    /* ---------- BUSINESS BRAND ---------- */
+
+    .business-brand {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    .business-brand-lockup {
+        width: min(100%, 420px);
+        max-width: 100%;
+        height: auto;
+    }
+
 
     .business-intro {
         gap: 40px;
