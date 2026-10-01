@@ -285,6 +285,86 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
+       STACK — SWIPE
+       ===================================================== */
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+
+    stackReel.addEventListener(
+        "touchstart",
+        (event) => {
+
+            const touch =
+                event.touches[0];
+
+
+            touchStartX =
+                touch.clientX;
+
+            touchStartY =
+                touch.clientY;
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    stackReel.addEventListener(
+        "touchend",
+        (event) => {
+
+            const touch =
+                event.changedTouches[0];
+
+
+            const deltaX =
+                touch.clientX -
+                touchStartX;
+
+            const deltaY =
+                touch.clientY -
+                touchStartY;
+
+
+            /*
+             * Ignore short gestures and gestures
+             * that are primarily vertical scrolling.
+             */
+
+            if (
+                Math.abs(deltaX) < 50 ||
+                Math.abs(deltaX) <=
+                    Math.abs(deltaY)
+            ) {
+                return;
+            }
+
+
+            if (deltaX < 0) {
+
+                currentIndex += 1;
+
+            } else {
+
+                currentIndex -= 1;
+
+            }
+
+
+            updateStack();
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    /* =====================================================
        RESIZE
        ===================================================== */
 
