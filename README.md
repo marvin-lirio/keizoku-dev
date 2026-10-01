@@ -87,7 +87,7 @@ Areas of work include:
 
 **Status:** Active / Continuous Development
 
-The design and development of Keizoku Dev' own web presence.
+The design and development of Keizoku Dev's own web presence.
 
 The website is developed incrementally, with each page and interaction implemented, tested and refined as part of the broader site system.
 
