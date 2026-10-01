@@ -288,55 +288,59 @@ document.addEventListener("DOMContentLoaded", () => {
        STACK — SWIPE
        ===================================================== */
 
-    let touchStartX = 0;
-    let touchStartY = 0;
+    let pointerStartX = 0;
+    let pointerStartY = 0;
+    let pointerId = null;
 
 
     stackReel.addEventListener(
-        "touchstart",
+        "pointerdown",
         (event) => {
 
-            const touch =
-                event.touches[0];
+            if (event.pointerType === "mouse") {
+                return;
+            }
 
 
-            touchStartX =
-                touch.clientX;
+            pointerId =
+                event.pointerId;
 
-            touchStartY =
-                touch.clientY;
+            pointerStartX =
+                event.clientX;
 
-        },
-        {
-            passive: true
+            pointerStartY =
+                event.clientY;
+
         }
     );
 
 
     stackReel.addEventListener(
-        "touchend",
+        "pointerup",
         (event) => {
 
-            const touch =
-                event.changedTouches[0];
+            if (
+                pointerId === null ||
+                event.pointerId !== pointerId
+            ) {
+                return;
+            }
 
 
             const deltaX =
-                touch.clientX -
-                touchStartX;
+                event.clientX -
+                pointerStartX;
 
             const deltaY =
-                touch.clientY -
-                touchStartY;
+                event.clientY -
+                pointerStartY;
 
 
-            /*
-             * Ignore short gestures and gestures
-             * that are primarily vertical scrolling.
-             */
+            pointerId = null;
+
 
             if (
-                Math.abs(deltaX) < 50 ||
+                Math.abs(deltaX) < 40 ||
                 Math.abs(deltaX) <=
                     Math.abs(deltaY)
             ) {
@@ -357,9 +361,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             updateStack();
 
-        },
-        {
-            passive: true
+        }
+    );
+
+
+    stackReel.addEventListener(
+        "pointercancel",
+        () => {
+
+            pointerId = null;
+
         }
     );
 
