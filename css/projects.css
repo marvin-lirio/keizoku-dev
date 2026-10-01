@@ -160,9 +160,9 @@
 
     gap:
         clamp(
-            70px,
-            9vw,
-            150px
+            36px,
+            4vw,
+            64px
         );
 
     align-items: start;
@@ -197,6 +197,23 @@
     text-wrap: balance;
 }
 
+.project-title-brand {
+    display: flex;
+    align-items: center;
+}
+
+
+.project-brand-lockup {
+    display: block;
+
+    width:
+        min(
+            100%,
+            420px
+        );
+
+    height: auto;
+}
 
 /* =========================================================
    SUMMARY
@@ -272,33 +289,24 @@
    ========================================================= */
 
 .project-toggle {
-    display: inline-flex;
-
+    display: flex;
     align-items: center;
+    gap: 14px;
 
-    gap: 12px;
-
-    margin-top: 34px;
-
-    padding: 0;
+    width: fit-content;
+    margin-top: 42px;
+    margin-left: auto;
 
     border: 0;
+    padding: 0;
 
     background: transparent;
-
     color: var(--text);
-
     font-size: 0.7rem;
-
     font-weight: 700;
-
     letter-spacing: 0.04em;
-
+    
     cursor: pointer;
-
-    transition:
-        color
-        var(--transition);
 }
 
 

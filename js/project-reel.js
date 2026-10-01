@@ -24,14 +24,18 @@ const projects = [
         name: "Keizoku Dev Website",
         category: "Web Development",
         status: "Continuous Development",
-        url: "projects.html"
+        url: "projects.html",
+        brandMark:
+            "assets/images/brand/keizoku-dev-mark-black.png"
     },
 
     {
         name: "Fukutsu Fitness App",
         category: "Product Concept",
         status: "Pre-Development",
-        url: "projects.html"
+        url: "projects.html",
+        brandMark:
+            "assets/images/projects/fukutsufitness/fukutsu-fit-mark.png"
     }
 
 ];
@@ -88,13 +92,32 @@ function createProjectCard(project) {
         `View ${project.name}`
     );
 
+const projectTitle =
+    project.brandMark
+        ? `
+            <div class="project-brand-title">
+                <img
+                    class="project-brand-mark"
+                    src="${project.brandMark}"
+                    alt=""
+                >
 
-    card.innerHTML = `
-        <div class="project-bottom">
-
+                <h2>
+                    ${project.name}
+                </h2>
+            </div>
+        `
+        : `
             <h2>
                 ${project.name}
             </h2>
+        `;
+
+
+    card.innerHTML = `
+    <div class="project-bottom">
+
+        ${projectTitle}
 
             <div class="project-meta">
 

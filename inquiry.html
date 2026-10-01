@@ -22,79 +22,89 @@
 
 <body>
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
 
-    <header class="site-header">
+<header class="site-header">
 
-        <div class="container nav-container">
+    <div class="container nav-container">
 
-            <a
-                href="index.html"
-                class="brand"
-                aria-label="Keizoku Dev Home"
+        <a
+            class="brand"
+            href="index.html"
+            aria-label="Keizoku Dev — Home"
+        >
+            <img
+                class="brand-mark"
+                src="assets/images/brand/keizoku-dev-mark-black.png"
+                alt=""
             >
-                Keizoku Dev
-            </a>
+        </a>
 
 
-            <div class="nav-menu">
+        <div class="nav-menu">
 
-                <button
-                    class="nav-menu-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="site-navigation"
+            <button
+                class="nav-menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="site-navigation"
+            >
+
+                <span class="nav-current">
+                    Inquiry
+                </span>
+
+                <span
+                    class="nav-chevron"
+                    aria-hidden="true"
+                ></span>
+
+            </button>
+
+
+            <nav
+                class="nav-dropdown"
+                id="site-navigation"
+                aria-label="Main navigation"
+            >
+
+                <a href="index.html">
+                    <span>Home</span>
+                </a>
+
+
+                <a
+                    href="inquiry.html"
+                    class="active"
+                    aria-current="page"
                 >
-                    <span class="nav-current">
-                        Inquiry
-                    </span>
+                    <span>Inquiry</span>
 
                     <span
-                        class="nav-chevron"
+                        class="nav-indicator"
                         aria-hidden="true"
                     ></span>
-                </button>
+                </a>
 
 
-                <nav
-                    class="nav-dropdown"
-                    id="site-navigation"
-                    aria-label="Main navigation"
-                >
+                <a href="about.html">
+                    <span>About</span>
+                </a>
 
-                    <a href="index.html">
-                        <span>Home</span>
-                    </a>
 
-                    <a
-                        href="inquiry.html"
-                        class="active"
-                        aria-current="page"
-                    >
-                        <span>Inquiry</span>
-                        <span
-                            class="nav-indicator"
-                            aria-hidden="true"
-                        ></span>
-                    </a>
+                <a href="projects.html">
+                    <span>Projects</span>
+                </a>
 
-                    <a href="about.html">
-                        <span>About</span>
-                    </a>
-
-                    <a href="projects.html">
-                        <span>Projects</span>
-                    </a>
-
-                </nav>
-
-            </div>
+            </nav>
 
         </div>
 
-    </header>
+    </div>
+
+</header>
 
 
     <!-- =====================================================

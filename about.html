@@ -31,85 +31,89 @@
 <body>
 
 
-    <!-- =====================================================
-         SITE HEADER
-         ===================================================== -->
+<!-- =====================================================
+     SITE HEADER
+     ===================================================== -->
 
-    <header class="site-header">
+<header class="site-header">
 
-        <div class="container nav-container">
+    <div class="container nav-container">
 
-            <a
-                href="index.html"
-                class="brand"
-                aria-label="Keizoku Dev Home"
+        <a
+            class="brand"
+            href="index.html"
+            aria-label="Keizoku Dev — Home"
+        >
+            <img
+                class="brand-mark"
+                src="assets/images/brand/keizoku-dev-mark-black.png"
+                alt=""
             >
-                Keizoku Dev
-            </a>
+        </a>
 
 
-            <div class="nav-menu">
+        <div class="nav-menu">
 
-                <button
-                    class="nav-menu-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="site-navigation"
+            <button
+                class="nav-menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="site-navigation"
+            >
+
+                <span class="nav-current">
+                    About
+                </span>
+
+                <span
+                    class="nav-chevron"
+                    aria-hidden="true"
+                ></span>
+
+            </button>
+
+
+            <nav
+                class="nav-dropdown"
+                id="site-navigation"
+                aria-label="Main navigation"
+            >
+
+                <a href="index.html">
+                    <span>Home</span>
+                </a>
+
+
+                <a href="inquiry.html">
+                    <span>Inquiry</span>
+                </a>
+
+
+                <a
+                    href="about.html"
+                    class="active"
+                    aria-current="page"
                 >
-
-                    <span class="nav-current">
-                        About
-                    </span>
+                    <span>About</span>
 
                     <span
-                        class="nav-chevron"
+                        class="nav-indicator"
                         aria-hidden="true"
                     ></span>
-
-                </button>
-
-
-                <nav
-                    class="nav-dropdown"
-                    id="site-navigation"
-                    aria-label="Main navigation"
-                >
-
-                    <a href="index.html">
-                        <span>Home</span>
-                    </a>
+                </a>
 
 
-                    <a href="inquiry.html">
-                        <span>Inquiry</span>
-                    </a>
+                <a href="projects.html">
+                    <span>Projects</span>
+                </a>
 
-
-                    <a
-                        href="about.html"
-                        class="active"
-                        aria-current="page"
-                    >
-                        <span>About</span>
-
-                        <span
-                            class="nav-indicator"
-                            aria-hidden="true"
-                        ></span>
-                    </a>
-
-
-                    <a href="projects.html">
-                        <span>Projects</span>
-                    </a>
-
-                </nav>
-
-            </div>
+            </nav>
 
         </div>
 
-    </header>
+    </div>
+
+</header>
 
 
     <!-- =====================================================
@@ -537,9 +541,20 @@
 
                     <div class="behind-identity">
 
-                        <h2>
-                            Marvin Lirio
-                        </h2>
+                        <div class="behind-name">
+
+                            <img
+                                class="behind-brand-mark"
+                                src="assets/images/brand/keizoku-dev-mark-black.png"
+                                alt=""
+                                aria-hidden="true"
+                            >
+
+                            <h2>
+                                Marvin Lirio
+                            </h2>
+
+                        </div>
 
                         <span class="behind-role">
                             Developer
