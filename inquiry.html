@@ -159,10 +159,10 @@
                 <div class="inquiry-form-wrapper">
 
                     <form
+                        id="inquiry-form"
                         class="inquiry-form"
-                        action="#"
+                        action="https://formspree.io/f/xyekabjv"
                         method="post"
-                        onsubmit="return false;"
                     >
 
                         <!-- Name / Email -->
@@ -180,6 +180,7 @@
                                     id="name"
                                     name="name"
                                     autocomplete="name"
+                                    required
                                     placeholder="Your name"
                                 >
 
@@ -197,6 +198,7 @@
                                     id="email"
                                     name="email"
                                     autocomplete="email"
+                                    required
                                     placeholder="you@example.com"
                                 >
 
@@ -240,6 +242,7 @@
                                 id="message"
                                 name="message"
                                 rows="6"
+                                required
                                 placeholder="Tell us about what you'd like to build, improve or explore..."
                             ></textarea>
 
@@ -250,14 +253,13 @@
 
                         <div class="form-bottom">
 
-                            <p class="form-status">
-                                Inquiry submissions are not yet active.
+                            <p class="form-status" id="inquiry-status" role="status" aria-live="polite">
+                                Required fields are marked by your browser during validation.
                             </p>
 
                             <button
                                 type="submit"
                                 class="submit-button"
-                                disabled
                             >
                                 Send Inquiry
 
@@ -269,6 +271,15 @@
                         </div>
 
                     </form>
+
+                    <!-- Displayed only after a confirmed successful submission. -->
+                    <section class="inquiry-success" id="inquiry-success" role="status" aria-live="polite" aria-labelledby="inquiry-success-title" hidden>
+                        <div class="inquiry-success-accent" aria-hidden="true"></div>
+                        <p class="inquiry-success-eyebrow">MESSAGE SENT / PROJECT INQUIRY</p>
+                        <h2 id="inquiry-success-title">Thank you for reaching out to Keizoku Dev</h2>
+                        <p class="inquiry-success-copy">Your inquiry was submitted successfully, and we'll review it as soon as possible</p>
+                        <span class="inquiry-success-check" aria-hidden="true">✓</span>
+                    </section>
 
                 </div>
 
@@ -325,6 +336,7 @@
 
 
     <script src="js/main.js"></script>
+    <script src="js/inquiry.js"></script>
 
 </body>
 

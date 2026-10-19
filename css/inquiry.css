@@ -184,6 +184,70 @@
 
 
 /* =========================================================
+   SUCCESS CONFIRMATION — REPLACES FORM ON SUCCESS
+   ========================================================= */
+
+.inquiry-form[hidden],
+.inquiry-success[hidden] {
+    display: none;
+}
+
+.inquiry-success {
+    position: relative;
+    width: min(100%, 1120px);
+    margin-inline: auto;
+    padding: clamp(32px, 4vw, 52px) clamp(22px, 4vw, 56px);
+    border: 1px solid var(--border-strong);
+    background: var(--surface);
+    text-align: center;
+}
+
+.inquiry-success-accent {
+    width: 48px;
+    height: 4px;
+    margin: 0 auto 24px;
+    background: #9f2f2f;
+}
+
+.inquiry-success-eyebrow {
+    margin: 0 0 18px;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+}
+
+.inquiry-success h2 {
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(1.3rem, 2.15vw, 2rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.25;
+}
+
+.inquiry-success-copy {
+    margin: 14px 0 0;
+    color: var(--text-soft);
+    font-size: clamp(0.82rem, 1.12vw, 1rem);
+    line-height: 1.6;
+}
+
+.inquiry-success-check {
+    display: block;
+    margin-top: 20px;
+    color: #9f2f2f;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.form-status.is-error {
+    color: #9f2f2f;
+    font-size: 0.85rem;
+    font-weight: 650;
+}
+
+/* =========================================================
    FORM ROW
    ========================================================= */
 
