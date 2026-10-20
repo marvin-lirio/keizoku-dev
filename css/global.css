@@ -29,6 +29,12 @@ html {
 }
 
 body {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+
     margin: 0;
 
     background: #f3efe6;
@@ -459,6 +465,7 @@ button {
 
 main {
     width: 100%;
+    flex: 1 0 auto;
 }
 
 
@@ -467,6 +474,7 @@ main {
    ========================================================= */
 
 .site-footer {
+    margin-top: auto;
     position: relative;
     z-index: 100;
 
